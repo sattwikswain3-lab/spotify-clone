@@ -1,0 +1,112 @@
+.border {
+    border: 2px;
+    margin: 1px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.bg-grey {
+    background-color: #121212;
+    color: white;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.rounded {
+    border-radius: 7px;
+}
+
+.M-1 {
+    margin: 5px;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h5 {
+    margin: 0;
+    cursor: default;
+}
+
+.library {
+    min-height: 80vh;
+    position: relative;
+}
+
+.create-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 16px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.create-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.plus {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.footer button {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
