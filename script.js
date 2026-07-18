@@ -193,3 +193,28 @@ document.querySelectorAll(".card").forEach(card => {
 
 });
 
+let menuBtn = document.querySelector(".mobile-menu-btn");
+let sidebar = document.querySelector(".left");
+let overlay = document.querySelector(".mobile-overlay");
+
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("mobile-open");
+        document.body.classList.toggle("menu-open");
+    });
+}
+
+if (overlay) {
+    overlay.addEventListener("click", () => {
+        sidebar.classList.remove("mobile-open");
+        document.body.classList.remove("menu-open");
+    });
+}
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+        sidebar?.classList.remove("mobile-open");
+        document.body.classList.remove("menu-open");
+    }
+});
+
