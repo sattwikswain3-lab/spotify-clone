@@ -1,10 +1,6 @@
 console.log("lets write java script")
 
-let songs = [
-    "Winning Speech.mp3",
-    "Kkriegerz - Waiting For You [NCS Release].mp3",
-    "2frers - FLIRT LIGHTS [NCS Release].mp3"
-];
+let songs = [...songList];
 let currentSong = new Audio();
 let currentSongIndex = 0;
 
@@ -26,31 +22,7 @@ function getSongUrl(songName) {
 }
 
 async function getSongs() {
-    try {
-        let a = await fetch("/songs/");
-        if (a.ok) {
-            let response = await a.text();
-            let div = document.createElement("div");
-            div.innerHTML = response;
-            let links = Array.from(div.getElementsByTagName("a"));
-            let discoveredSongs = links
-                .map(link => link.href)
-                .filter(href => href.endsWith(".mp3"))
-                .map(href => decodeURIComponent(href.split("/songs/")[1] || href.split("/").pop()));
-
-            if (discoveredSongs.length > 0) {
-                return discoveredSongs;
-            }
-        }
-    } catch (error) {
-        console.warn("Could not read songs directory listing:", error);
-    }
-
-    return [
-        "Winning Speech.mp3",
-        "Kkriegerz - Waiting For You [NCS Release].mp3",
-        "2frers - FLIRT LIGHTS [NCS Release].mp3"
-    ];
+    return [...songList];
 }
 
 async function main() {
