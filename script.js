@@ -107,6 +107,23 @@ previous.addEventListener("click", () => {
     }
 })
 
+currentSong.addEventListener("ended", () => {
+
+    if (currentSongIndex < songs.length - 1) {
+        currentSongIndex++;
+
+        currentSong.src = getSongUrl(songs[currentSongIndex]);
+        currentSong.play();
+
+        updateSongInfo();
+
+        play.src = "pause.svg";
+    } else {
+        play.src = "play.svg";
+    }
+
+});
+
 function updateSongInfo() {
     document.querySelector(".songinfo").innerHTML =
         decodeURIComponent(songs[currentSongIndex]).replace(".mp3", "");
